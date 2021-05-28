@@ -18,51 +18,66 @@ public class Persona {
         this.peso = peso;
         this.altura = altura;
         this.sexo = comprobarSexo(sexo);
-        this.dni=generarDNI();
     }
     public Persona(String nombre, int edad,String sexo){
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = comprobarSexo(sexo);
-        this.dni=generarDNI();
     }
     public Persona(){
 
     }
+
+    public double getImc() {
+        return imc;
+    }
+
+    public void setImc(double imc) {
+        this.imc = imc;
+    }
+
     public String getNombre() {
         return nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public double getAltura() {
-        return altura;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
     public void setEdad(int edad) {
         this.edad = edad;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
     public void setPeso(double peso) {
         this.peso = peso;
+    }
+
+    public double getAltura() {
+        return altura;
     }
 
     public void setAltura(double altura) {
@@ -87,16 +102,16 @@ public class Persona {
         return (int) imc;
     }
 
-    public void mostrarIMC(){
+    public String mostrarIMC(){
         switch (medirIMC()){
             case -1:
-                System.out.println("estas en tu peso ideal");
+                return "estas en tu peso ideal";
             case 0:
-                System.out.println("estas por debajo tu peso ideal");
+                return "estas por debajo tu peso ideal";
             case 1:
-                System.out.println("tienes sobrepeso");
+                return "tienes sobrepeso";
             default:
-                System.out.println("sin respuesta");
+                return "sin respuesta";
         }
     }
     public boolean EsMayorDeEdad(){
@@ -108,11 +123,10 @@ public class Persona {
         return (sexo == "F") ? SEXO_FEMENINO : SEXO_MASCULINO;
     }
 
-    public String generarDNI() {
+    public void generarDNI() {
         int num = (int) (100000000 * Math.random());
         int resto = num % 23;
-        return this.dni = "" + num + "" + letras[resto];
-
+        dni = "" + num + "" + letras[resto];
     }
 
     @Override

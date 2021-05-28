@@ -33,11 +33,11 @@ public class MainApp {
         persona3.setEdad(34);
         persona3.comprobarSexo("M");
 
-        System.out.println("Resultados de "+ persona1.getNombre()+" "+);
+        System.out.println("Resultados de "+ persona1.getNombre()+" "+persona1.mostrarIMC());
         System.out.println("Informacion general "+persona1);
-        System.out.println("Resultados de "+ persona2.getNombre()+" "+persona2.medirIMC());
+        System.out.println("Resultados de "+ persona2.getNombre()+" "+persona2.mostrarIMC());
         System.out.println("Informacion general "+persona2);
-        System.out.println("Resultados de "+ persona3.getNombre()+" "+persona3.medirIMC());
+        System.out.println("Resultados de "+ persona3.getNombre()+" "+persona3.mostrarIMC());
         System.out.println("Informacion general "+persona3);
 
     }
